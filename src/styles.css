@@ -1,0 +1,137 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("https://fonts.gstatic.com/s/fraunces/v36/6NUh8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk.woff2") format("woff2");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme inline {
+  --font-serif: "Fraunces", "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-cream: var(--cream);
+  --color-cream-deep: var(--cream-deep);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-olive: var(--olive);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+
+  --shadow-soft: 0 1px 2px oklch(0.25 0.04 60 / 0.04), 0 8px 24px oklch(0.25 0.04 60 / 0.06);
+  --shadow-card: 0 2px 8px oklch(0.25 0.04 60 / 0.05);
+}
+
+:root {
+  --radius: 0.875rem;
+  --background: oklch(0.97 0.012 85);
+  --foreground: oklch(0.22 0.03 50);
+  --cream: oklch(0.965 0.014 85);
+  --cream-deep: oklch(0.94 0.018 82);
+
+  --card: oklch(0.99 0.008 85);
+  --card-foreground: oklch(0.22 0.03 50);
+  --popover: oklch(0.99 0.008 85);
+  --popover-foreground: oklch(0.22 0.03 50);
+
+  --primary: oklch(0.28 0.05 45);          /* deep espresso */
+  --primary-foreground: oklch(0.97 0.012 85);
+
+  --secondary: oklch(0.93 0.015 80);
+  --secondary-foreground: oklch(0.28 0.05 45);
+
+  --muted: oklch(0.93 0.013 80);
+  --muted-foreground: oklch(0.5 0.025 60);
+
+  --accent: oklch(0.92 0.025 80);
+  --accent-foreground: oklch(0.28 0.05 45);
+
+  --gold: oklch(0.84 0.16 88);             /* mustard gold */
+  --gold-foreground: oklch(0.22 0.03 50);
+  --olive: oklch(0.58 0.12 95);            /* olive/dijon */
+
+  --destructive: oklch(0.55 0.21 25);
+  --destructive-foreground: oklch(0.98 0.01 85);
+
+  --border: oklch(0.89 0.018 80);
+  --input: oklch(0.89 0.018 80);
+  --ring: oklch(0.58 0.12 95);
+
+  --sidebar: oklch(0.945 0.018 82);
+  --sidebar-foreground: oklch(0.28 0.05 45);
+}
+
+.dark {
+  --background: oklch(0.18 0.02 50);
+  --foreground: oklch(0.95 0.01 85);
+  --card: oklch(0.22 0.025 50);
+  --card-foreground: oklch(0.95 0.01 85);
+  --primary: oklch(0.84 0.16 88);
+  --primary-foreground: oklch(0.22 0.03 50);
+  --border: oklch(1 0 0 / 10%);
+  --sidebar: oklch(0.22 0.025 50);
+  --sidebar-foreground: oklch(0.95 0.01 85);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html, body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, .font-serif {
+    font-family: var(--font-serif);
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-card { box-shadow: var(--shadow-card); }
+  .bg-gradient-espresso {
+    background-image: linear-gradient(135deg, oklch(0.32 0.05 45), oklch(0.22 0.04 45));
+  }
+  .bg-gradient-gold {
+    background-image: linear-gradient(135deg, oklch(0.88 0.16 88), oklch(0.78 0.18 85));
+  }
+  .scrollbar-none::-webkit-scrollbar { display: none; }
+  .scrollbar-none { scrollbar-width: none; }
+}
