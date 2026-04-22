@@ -104,15 +104,7 @@ export default function DashboardPage() {
 
   return (
     <AppShell action="Quick Sale">
-      <PageHeader
-        eyebrow="Real-time Commodity Metrics"
-        title="Inventory Oversight"
-        action={
-          <button className="inline-flex items-center gap-2 rounded-xl bg-gradient-gold text-gold-foreground px-6 h-12 text-sm font-semibold uppercase tracking-[0.16em] shadow-soft hover:opacity-95 transition">
-            <ShoppingCart className="h-4 w-4" /> Quick Sale
-          </button>
-        }
-      />
+      <PageHeader eyebrow="Real-time Commodity Metrics" title="Inventory Oversight" />
 
       {loading ? (
         <div className="flex items-center justify-center min-h-[60vh]">
