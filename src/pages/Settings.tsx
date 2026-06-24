@@ -33,7 +33,7 @@ export default function Settings() {
 
   return (
     <div className="min-h-screen bg-background p-8">
-      <PageHeader title="Settings" subtitle="Manage varieties and warehouses" />
+      <PageHeader eyebrow="Configuration" title="Settings" />
 
       <div className="mt-8 max-w-6xl mx-auto">
         <div className="flex gap-4 border-b border-border/20 mb-8">
