@@ -176,10 +176,10 @@ export default function LoginPage() {
       {/* Footer */}
       <footer className="w-full py-8 px-12 flex flex-col md:flex-row justify-between items-center bg-background border-t border-border">
         <div className="font-serif text-lg font-bold text-primary mb-4 md:mb-0">
-          The Heritage Curator
+          Date Inventory Management
         </div>
         <div className="font-serif text-sm tracking-wide text-muted-foreground mb-4 md:mb-0">
-          © 2024 The Heritage Curator. All Rights Reserved.
+          © 2024 Date Inventory Management. All Rights Reserved.
         </div>
         <div className="flex gap-8">
           <a
